@@ -1,0 +1,4 @@
+BossId,TriggerRate,HiddenBossId
+int,int,int
+BossId,触发概率百倍值,隐藏BossId
+1001,100,2001

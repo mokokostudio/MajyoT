@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package mpb;
+
+option go_package = "./mpb";
+
+import "common.proto";
+
+// game
+message CReqFight {
+    uint32 boss_id = 1;
+    uint64 boss_uuid = 2;
+}
+
+message CResFight {
+    bool win = 1;
+    repeated FightDetail details = 2;
+    CAwards awards = 3;
+    uint32 energy_cost = 4;
+    uint64 dmg = 5;
+    uint64 dmg_rate = 6;
+    HiddenBoss hidden_boss = 7;
+}
+
+message CResGetEnergy {
+    uint32 energy = 1;
+    int64 update_at = 2;
+}
+
+message CReqGetHiddenBoss {
+    uint64 boss_uuid = 1;
+}
+
+message CResGetHiddenBoss {
+    HiddenBoss hidden_boss = 1;
+    bool fought = 2;
+    int64 fight_cd = 3;
+}

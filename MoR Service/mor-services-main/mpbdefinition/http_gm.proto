@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package mpb;
+
+option go_package = "./mpb";
+
+message CReqAdminLoginByPassword {
+    string account = 1;
+    string password = 2;
+}
+
+message CResAdminLoginByPassword {
+    string token = 1;
+}

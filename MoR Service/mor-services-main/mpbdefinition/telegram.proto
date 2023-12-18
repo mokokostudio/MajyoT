@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package mpb;
+
+option go_package = "./mpb";
+
+//import "google/protobuf/struct.proto";
+
+//message TGDataMsgFrom {
+//    uint64 id = 1;
+//    bool is_bot = 2;
+//    string first_name = 3;
+//    string last_name = 4;
+//    string language_code = 5;
+//}
+//
+//message TGDataMsgChat {
+//    uint64 id = 1;
+//    string first_name = 2;
+//    string last_name = 3;
+//    string type = 4;
+//}
+//
+//message TGDataMsgEntity {
+//    uint32 offset = 1;
+//    uint32 length = 2;
+//    string type = 3;
+//}
+//
+//message TGDataMsg {
+//    uint32 message_id = 1;
+//    TGDataMsgFrom from = 2;
+//    TGDataMsgChat chat = 3;
+//    int64 date = 4;
+//    string text = 5;
+//    repeated TGDataMsgEntity entities = 6;
+//}
+//
+//message TGMsgRecv {
+//    uint64 update_id = 1;
+//    TGDataMsg message = 2;
+//}
+//
+//message TGMsgSend {
+//    string method = 1;
+//    uint64 chat_id = 2;
+//    string text = 3;
+//    string parse_mode = 4;
+//    bool disable_web_page_preview = 5;
+//}
+//
+//message TGWebAppInfo {
+//
+//}
+//
+//message TGLoginUrl {
+//
+//}
+//
+//message TGInlineKeyboardMarkup {
+//    repeated google.protobuf.Value inline_keyboard = 1;
+//}
+//
+//message TGInlineKeyboardButton {
+//    string text = 1;
+//    string url = 2;
+//    string callback_data = 3;
+//    TGWebAppInfo web_app = 4;
+//    TGLoginUrl login_url = 5;
+//}

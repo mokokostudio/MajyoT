@@ -1,0 +1,8 @@
+/vendor/
+/config/
+/logs/
+./makefile
+./mp.sh
+/makefile
+/mp.sh
+/mor_services

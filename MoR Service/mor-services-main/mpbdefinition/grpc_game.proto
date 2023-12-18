@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package mpb;
+
+option go_package = "./mpb";
+
+import "common.proto";
+
+service GameService {
+    rpc GetHiddenBoss(ReqGetHiddenBoss) returns (ResGetHiddenBoss);
+    rpc Fight(ReqFight) returns (ResFight);
+    rpc GetEnergy(ReqUserId) returns (ResGetEnergy);
+    rpc AddEnergy(ReqAddEnergy) returns (ResAddEnergy);
+}
+
+message ReqFight {
+    uint64 user_id = 1;
+    uint32 boss_id = 2;
+    uint64 boss_uuid = 3;
+}
+
+message ResFight {
+    bool win = 1;
+    bool boss_die = 2;
+    repeated FightDetail details = 3;
+    CAwards awards = 4;
+    uint32 energy_cost = 5;
+    uint64 dmg = 6;
+    uint64 dmg_rate = 7;
+    HiddenBoss hidden_boss = 8;
+}
+
+message ResGetEnergy {
+    uint32 energy = 1;
+    int64 update_at = 2;
+}
+
+message ReqAddEnergy {
+    uint64 user_id = 1;
+    uint32 energy = 2;
+}
+
+message ResAddEnergy {
+    uint32 energy = 1;
+    int64 update_at = 2;
+}
+
+message ReqGetHiddenBoss {
+    uint64 user_id = 1;
+    uint64 boss_uuid = 2;
+    int64 fight_cd = 3;
+}
+
+message ResGetHiddenBoss {
+    HiddenBoss hidden_boss = 1;
+    bool fought = 2;
+    int64 fight_cd = 3;
+}

@@ -1,0 +1,4 @@
+BaseHP,BaseAtk,BaseAtkGap,HPAddRate,ATKAddRate,ATKSpeedAddRate,CriRate,CriDmgRate,HitRate,DodgeRate,DmgAddRate,DmgReduceRate,AtkBuffRate,DefenseBuffRate
+int,int,int,int,int,int,int,int,int,int,int,int,int,int
+基础HP,基础攻击,基础攻击间隔秒,HP加成比例百倍值,攻击加成比例百倍值,攻击速度加成比例百倍值,暴击率百倍值,暴击伤害百倍值,命中率百倍值,闪避率百倍值,增害比例百倍值,减伤比例百倍值,攻击buff百倍值,减伤buff百倍值
+2000,1000,1,0,0,0,100,100,10000,0,100,10,0,0

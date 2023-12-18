@@ -1,0 +1,9 @@
+Cmd,Method,Text,Photo,GameShortName,Url
+string,string,string,string,string,string
+命令,回复方式,内容,图片(网络地址或者file_id),游戏名,Url
+/echo,sendMessage,,,,
+/menu,sendPhoto,,AgACAgQAAxkDAANKZWcHqIP-t3TnEocoJHKhBUG5cgMAAuOxMRtfJT1Tck7fmfUs4ToBAAMCAANzAAMzBA,,
+/game,sendGame,,,majyotreasuretest,
+/cbqsendgame,answerCallbackQuery,,,,
+/cbqsendgame,sendGame,,,majyotreasuretest,
+/cbqlaunchgame,answerCallbackQuery,,,,http://47.251.66.128:8083

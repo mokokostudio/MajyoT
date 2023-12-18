@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package mpb;
+
+option go_package = "./mpb";
+
+service NFTService {
+}

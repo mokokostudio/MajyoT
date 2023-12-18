@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package mpb;
+
+option go_package = "./mpb";
+
+import "common.proto";
+
+message DBBaseEquip {
+    EItem.BaseEquipType equip_type = 1;
+    uint32 star = 2;
+    uint32 level = 3;
+}
+
+message DBBaseEquips {
+    map<uint32, DBBaseEquip> equips = 1;
+    map<uint32, uint32> upgrade_star_failed_times = 2;
+    map<uint32, uint32> upgrade_level_failed_times = 3;
+}
+
+message DBItem {
+    uint32 item_id = 1;
+    uint32 num = 2;
+    uint64 uuid = 3;
+    int64 expire_at = 4;
+}
+
+message DBItemListShard {
+    map<uint32, DBItem> items = 1;
+}
+
+message DBUItemListShard {
+    map<uint32, uint32> item_nums = 1;
+    map<uint64, DBItem> items = 2;
+}
+
+message DBWallet {
+    uint32 mana = 1;
+}

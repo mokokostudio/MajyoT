@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package mpb;
+
+option go_package = "./mpb";
+
+import "common.proto";
+
+service APIProxyGRPC {
+    rpc SendEmailBindCode (ReqSendEmailBindCode) returns (Empty);
+    rpc SendEmailResetPasswordValidationCode (ReqSendEmailResetPasswordValidationCode) returns (Empty);
+    rpc SendMsgToTelegram(ReqSendMsgToTelegram) returns (Empty);
+}
+
+message ReqSendEmailBindCode {
+    string email = 1;
+    string code = 2;
+}
+
+message ReqSendEmailResetPasswordValidationCode {
+    string email = 1;
+    string code = 2;
+}
+
+message ReqSendMsgToTelegram {
+    string bot = 1;
+    bytes msg = 2;
+}

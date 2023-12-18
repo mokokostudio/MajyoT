@@ -1,0 +1,11 @@
+ItemId,ItemType,Name,Desc,IsUnique
+int,int,string,string,bool
+ItemId,Item类型,名称,描述,是否唯一(不可堆叠)
+100001,1,材料1,,false
+100002,1,材料2,,false
+100003,1,材料3,,false
+100004,1,材料3,,false
+100005,1,材料3,,false
+110001,1,装备1,,true
+91000001,91,玛娜,,false
+92000001,92,体力,,false

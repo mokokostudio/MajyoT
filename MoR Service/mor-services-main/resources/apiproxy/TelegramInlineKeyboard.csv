@@ -1,0 +1,8 @@
+Cmd,Row,Text,Url,CallbackData,CallbackGame
+string,int,string,string,string,bool
+命令,行,按钮文本,Url,回调参数,回调游戏
+/menu,1,    ⚔️Play Game    ,,/cbqsendgame,false
+/menu,2,       Wallet      ,https://google.com,,false
+/menu,2,     NFT Market    ,https://google.com,,false
+/menu,3,  Ask For Energy   ,https://google.com,,false
+/menu,3,      Setting      ,https://google.com,,false

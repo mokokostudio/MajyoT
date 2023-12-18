@@ -1,0 +1,4 @@
+EnergyLimit,EnergyRecoverTime,FightHiddenBossCD
+int,int,int
+能量上线,自然恢复能量每点用时(秒),隐藏boss攻击cd(秒)
+200,480,30

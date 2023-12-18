@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package mpb;
+
+option go_package = "./mpb";
+
+import "common.proto";
+
+service ItemService {
+    rpc GetItems (ReqUserId) returns (ResGetItems);
+    rpc GetEquips (ReqUserId) returns (ResGetEquips);
+    rpc UpgradeBaseEquipStar(ReqUpgradeBaseEquipStar) returns (ResUpgradeBaseEquipStar);
+    rpc UpgradeBaseEquipLevel(ReqUpgradeBaseEquipLevel) returns (ResUpgradeBaseEquipLevel);
+    rpc ExchangeItems (ReqExchangeItems) returns (ResExchangeItems);
+    rpc BatchAddItems (ReqBatchAddItems) returns (ResBatchAddItems);
+}
+
+message ReqUpgradeBaseEquipStar {
+    uint64 user_id = 1;
+    EItem.BaseEquipType equipt_type = 2;
+    uint32 cur_star = 3;
+}
+
+message ResUpgradeBaseEquipStar{
+    bool success = 1;
+    uint32 new_star = 2;
+}
+
+message ReqUpgradeBaseEquipLevel {
+    uint64 user_id = 1;
+    EItem.BaseEquipType equipt_type = 2;
+    uint32 cur_level = 3;
+}
+
+message ResUpgradeBaseEquipLevel {
+    bool success = 1;
+    uint32 new_level = 2;
+}
+
+message ReqExchangeItems {
+    uint64 user_id = 1;
+    repeated Item add_items = 2;
+    repeated Item del_items = 3;
+    int32 delta_mana = 4;
+    EItem.TransReason trans_reason = 5;
+    uint64 trans_sub_reason = 6;
+}
+
+message ResExchangeItems {
+    repeated Item add_items = 1;
+    repeated Item del_items = 2;
+    repeated Item update_items = 3;
+}
+
+message ResGetEquips {
+    repeated BaseEquip base_equips = 1;
+    repeated NFTEquip nft_equips = 2;
+}
+
+message ReqBatchAddItems {
+    map<uint64, Items> add_items = 1;
+    map<uint64, uint32> add_manas = 2;
+    EItem.TransReason trans_reason = 3;
+    uint64 trans_sub_reason = 4;
+}
+
+message ResBatchAddItems {
+    map<uint64, Items> add_items = 1;
+    map<uint64, Items> update_items = 2;
+}
+
+message ResGetItems {
+    repeated Item items = 1;
+    repeated BaseEquip base_equips = 2;
+    repeated NFTEquip nft_equips = 3;
+    uint32 mana = 4;
+}
+
